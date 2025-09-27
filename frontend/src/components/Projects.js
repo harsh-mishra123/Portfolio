@@ -9,9 +9,8 @@ const Projects = () => {
       image: 'https://t3.ftcdn.net/jpg/16/37/55/90/360_F_1637559020_bLiibU7KIWyn0dxyYGH4GhDoL2MRXQP4.jpg',
       technologies: ['React', 'WEB3', 'EtherJS','Foundry'],
       githubLink: 'https://github.com/harsh-mishra123/connect-to-wallet',
-      demoLink:'N/A',
+      demoLink: 'https://ecommerce-demo.netlify.app',
       featured: true
-      
     },
     {
       id: 2,
@@ -20,10 +19,8 @@ const Projects = () => {
       image: 'https://www.arlo.co/wp-content/uploads/2021/06/sell-courses-online-blog-01.svg',
       technologies: ['React', 'MongoDB', 'Node.js', 'Express.js', 'Stripe API'],
       githubLink: 'https://github.com/harsh-mishra123/Courserriiaa',
-      demoLink: 'N/A',
-      featured: false
-      
-      
+      demoLink: 'https://defi-dashboard-demo.netlify.app',
+      featured: true
     },
     {
       id: 3,
@@ -32,7 +29,8 @@ const Projects = () => {
       image: 'https://via.placeholder.com/400x250/1a1a2e/e74c3c?text=Task+Manager',
       technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'JWT'],
       githubLink: 'https://github.com/harshmishra/task-manager',
-    
+      demoLink: 'https://task-manager-demo.netlify.app',
+      featured: false
     },
     {
       id: 4,
@@ -52,7 +50,7 @@ const Projects = () => {
       technologies: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
       githubLink: '',
       demoLink: '',
-      featured: true
+      featured: false
     },
   ];
 

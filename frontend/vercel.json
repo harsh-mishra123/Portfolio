@@ -47,11 +47,6 @@
       ]
     }
   ],
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "@vercel/node"
-    }
-  },
   "env": {
     "REACT_APP_API_URL": "@react_app_api_url"
   }

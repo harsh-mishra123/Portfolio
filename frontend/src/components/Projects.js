@@ -8,9 +8,8 @@ const Projects = () => {
       description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.',
       image: 'https://t3.ftcdn.net/jpg/16/37/55/90/360_F_1637559020_bLiibU7KIWyn0dxyYGH4GhDoL2MRXQP4.jpg',
       technologies: ['React', 'WEB3', 'EtherJS','Foundry'],
-      githubLink: 'https://github.com/harsh-mishra123/connect-to-wallet',
-      demoLink: 'https://ecommerce-demo.netlify.app',
-      featured: true
+      githubLink: 'https://github.com/harsh-mishra123/connect-to-wallet'
+      
     },
     {
       id: 2,
@@ -19,8 +18,7 @@ const Projects = () => {
       image: 'https://www.arlo.co/wp-content/uploads/2021/06/sell-courses-online-blog-01.svg',
       technologies: ['React', 'MongoDB', 'Node.js', 'Express.js', 'Stripe API'],
       githubLink: 'https://github.com/harsh-mishra123/Courserriiaa',
-      demoLink: 'https://defi-dashboard-demo.netlify.app',
-      featured: true
+      
     },
     {
       id: 3,
@@ -29,8 +27,7 @@ const Projects = () => {
       image: 'https://via.placeholder.com/400x250/1a1a2e/e74c3c?text=Task+Manager',
       technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'JWT'],
       githubLink: 'https://github.com/harshmishra/task-manager',
-      demoLink: 'https://task-manager-demo.netlify.app',
-      featured: false
+    
     },
     {
       id: 4,

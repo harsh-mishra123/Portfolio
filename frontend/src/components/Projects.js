@@ -9,7 +9,7 @@ const Projects = () => {
       image: 'https://t3.ftcdn.net/jpg/16/37/55/90/360_F_1637559020_bLiibU7KIWyn0dxyYGH4GhDoL2MRXQP4.jpg',
       technologies: ['React', 'WEB3', 'EtherJS','Foundry'],
       githubLink: 'https://github.com/harsh-mishra123/connect-to-wallet',
-      demoLink = 'N/A',
+      demoLink:'N/A',
       featured: true
       
     },

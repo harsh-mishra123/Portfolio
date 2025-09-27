@@ -8,7 +8,9 @@ const Projects = () => {
       description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.',
       image: 'https://t3.ftcdn.net/jpg/16/37/55/90/360_F_1637559020_bLiibU7KIWyn0dxyYGH4GhDoL2MRXQP4.jpg',
       technologies: ['React', 'WEB3', 'EtherJS','Foundry'],
-      githubLink: 'https://github.com/harsh-mishra123/connect-to-wallet'
+      githubLink: 'https://github.com/harsh-mishra123/connect-to-wallet',
+      demoLink = 'N/A',
+      featured: true
       
     },
     {
@@ -18,6 +20,9 @@ const Projects = () => {
       image: 'https://www.arlo.co/wp-content/uploads/2021/06/sell-courses-online-blog-01.svg',
       technologies: ['React', 'MongoDB', 'Node.js', 'Express.js', 'Stripe API'],
       githubLink: 'https://github.com/harsh-mishra123/Courserriiaa',
+      demoLink: 'N/A',
+      featured: false
+      
       
     },
     {
@@ -47,7 +52,7 @@ const Projects = () => {
       technologies: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
       githubLink: '',
       demoLink: '',
-      featured: false
+      featured: true
     },
   ];
 

@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "Harsh Mishra Portfolio API",
+    "description": "API endpoints for testing the portfolio backend with MongoDB Atlas",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5001"
+        }
+      }
+    },
+    {
+      "name": "Create Contact Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Harsh Mishra\",\n  \"email\": \"harsh@example.com\",\n  \"message\": \"This is a test message to check if MongoDB Atlas is working properly!\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/api/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5001",
+          "path": ["api", "contact"]
+        }
+      }
+    },
+    {
+      "name": "Get All Contact Messages",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5001/api/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5001",
+          "path": ["api", "contact"]
+        }
+      }
+    },
+    {
+      "name": "Test Validation Error",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/api/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5001",
+          "path": ["api", "contact"]
+        }
+      }
+    }
+  ]
+}

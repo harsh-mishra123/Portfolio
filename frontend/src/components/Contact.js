@@ -1,102 +1,127 @@
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import ParticlesBg from "particles-bg";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('/api/contact', formData);
+
+      if (response.data.success) {
+        setSubmitStatus({
+          type: 'success',
+          message: response.data.message || 'Message sent successfully!',
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: response.data.message || 'Failed to send message.',
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error.response?.data?.message || 'Something went wrong!',
+      });
+    }
+  };
+
   return (
-    <section
-      id="contact"
-      className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white px-6 py-16"
+    <motion.div
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-black text-white px-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
     >
-      {/* Particle Background */}
-      <ParticlesBg type="circle" bg={true} />
+      <div className="w-full max-w-2xl bg-gray-800/60 backdrop-blur-lg p-8 rounded-2xl shadow-xl">
+        <h2 className="text-3xl font-bold mb-6 text-center">Contact Me</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <motion.input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg bg-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
+            whileFocus={{ scale: 1.02 }}
+          />
+          <motion.input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 rounded-lg bg-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
+            whileFocus={{ scale: 1.02 }}
+          />
+          <motion.textarea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            rows="5"
+            className="w-full p-3 rounded-lg bg-gray-700 focus:ring-2 focus:ring-blue-500 outline-none"
+            whileFocus={{ scale: 1.02 }}
+          />
+          <motion.button
+            type="submit"
+            className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors font-semibold"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Send Message
+          </motion.button>
+        </form>
 
-      <motion.h2
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
-      >
-        Let’s Connect
-      </motion.h2>
+        {submitStatus && (
+          <p
+            className={`mt-4 text-center ${
+              submitStatus.type === 'success' ? 'text-green-400' : 'text-red-400'
+            }`}
+          >
+            {submitStatus.message}
+          </p>
+        )}
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-lg md:text-xl text-gray-300 mb-12 text-center max-w-2xl"
-      >
-        I’m always open to collaborations, new opportunities, or just a friendly
-        chat. Reach out through any of the platforms below!
-      </motion.p>
-
-      {/* Contact Info Cards */}
-      <div className="grid md:grid-cols-3 gap-8 mb-12 w-full max-w-5xl">
-        {/* Email */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="p-6 bg-gray-800/60 rounded-2xl shadow-lg backdrop-blur-md text-center"
-        >
-          <h3 className="text-xl font-semibold mb-2 text-purple-400">
-            Email
-          </h3>
-          <p className="text-gray-300">harshmishra@example.com</p>
-        </motion.div>
-
-        {/* Phone */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="p-6 bg-gray-800/60 rounded-2xl shadow-lg backdrop-blur-md text-center"
-        >
-          <h3 className="text-xl font-semibold mb-2 text-pink-400">
-            Phone
-          </h3>
-          <p className="text-gray-300">+91 9876543210</p>
-        </motion.div>
-
-        {/* Location */}
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="p-6 bg-gray-800/60 rounded-2xl shadow-lg backdrop-blur-md text-center"
-        >
-          <h3 className="text-xl font-semibold mb-2 text-red-400">
-            Location
-          </h3>
-          <p className="text-gray-300">India</p>
-        </motion.div>
+        <div className="flex justify-center gap-6 mt-6">
+          <motion.a
+            href="https://github.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+          >
+            <FaGithub size={28} />
+          </motion.a>
+          <motion.a
+            href="https://linkedin.com/in/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+          >
+            <FaLinkedin size={28} />
+          </motion.a>
+          <motion.a
+            href="https://twitter.com/yourusername"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2 }}
+          >
+            <FaTwitter size={28} />
+          </motion.a>
+        </div>
       </div>
-
-      {/* Social Links */}
-      <div className="flex space-x-8 text-3xl">
-        <motion.a
-          href="https://github.com/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.3 }}
-          className="text-gray-400 hover:text-white transition-colors"
-        >
-          <FaGithub />
-        </motion.a>
-        <motion.a
-          href="https://linkedin.com/in/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.3 }}
-          className="text-gray-400 hover:text-[#0A66C2] transition-colors"
-        >
-          <FaLinkedin />
-        </motion.a>
-        <motion.a
-          href="https://twitter.com/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ scale: 1.3 }}
-          className="text-gray-400 hover:text-[#1DA1F2] transition-colors"
-        >
-          <FaTwitter />
-        </motion.a>
-      </div>
-    </section>
+    </motion.div>
   );
 };
 

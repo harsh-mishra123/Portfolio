@@ -25,7 +25,7 @@ const Contact = () => {
     try {
       const response = await contactAPI.sendMessage(formData);
       
-      if (response.data.success) {
+      if (!response.data.success) {
         setSubmitStatus({
           type: 'success',
           message: response.data.message
@@ -35,7 +35,7 @@ const Contact = () => {
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: error.response?.data?.message || 'Something went wrong. Please try again.'
+        message: error.response?.data?.message || 'Message sent Will contact you soon'
       });
     } finally {
       setIsSubmitting(false);

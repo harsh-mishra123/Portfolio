@@ -25,7 +25,7 @@ const Contact = () => {
     try {
       const response = await contactAPI.sendMessage(formData);
       
-      if (response.data.success) {
+      if (!response.data.success) {
         setSubmitStatus({
           type: 'success',
           message: response.data.message

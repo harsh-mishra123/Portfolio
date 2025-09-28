@@ -38,7 +38,7 @@ const Projects = () => {
       description: 'A decentralized NFT marketplace where users can mint, buy, and sell NFTs. Built with smart contracts and modern web technologies.',
       image: 'https://wallpapercave.com/wp/wp11484803.png',
       technologies: ['React', 'Solidity', 'Foundry', 'IPFS', 'MetaMask'],
-      githubLink: 'https://github.com/harsh-mishra123/crypto-is-awesome',
+      Link: 'https://.com/harsh-mishra123/crypto-is-awesome',
       demoLink: 'N/A',
       featured: false
     },
@@ -48,7 +48,7 @@ const Projects = () => {
       description: 'A Full Stack project where you can find minimal distant route, with less of obstacles.',
       image: 'https://img.freepik.com/premium-vector/destinations-gps-tracking-map-track-navigation-pin-street-maps-navigate-mapping-locate-position_753943-584.jpg?semt=ais_hybrid&w=740&q=80',
       technologies: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
-      githubLink: '',
+      Link: '',
       demoLink: '',
       featured: false
     },
@@ -181,7 +181,7 @@ const Projects = () => {
             Want to see more of my work?
           </p>
           <a
-            href="https://github.com/harshmishra"
+            href="https://github.com/harsh-mishra123"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"

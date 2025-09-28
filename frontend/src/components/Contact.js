@@ -257,7 +257,7 @@ const Contact = () => {
                 <div className={`mt-4 p-4 rounded-lg ${
                   submitStatus.type === 'success' 
                     ? 'bg-green-500/20 border border-green-500/30 text-green-400' 
-                    : 'bg-red-500/20 border border-red-500/30 text-red-400'
+                    : 'bg-green-500/20 border border-green-500/30 text-green-400'
                 }`}>
                   {submitStatus.message}
                 </div>

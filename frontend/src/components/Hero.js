@@ -105,11 +105,12 @@ const Hero = () => {
                   CONTACT ME
                 </a>
                 <a
-                  href="#projects"
-                  className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 rounded-lg font-semibold transition-all duration-300 text-center"
-                >
-                  DOWNLOAD CV
-                </a>
+                href="/My_Resume.pdf"
+                download="Harsh_Mishra_CV.pdf"
+              className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 rounded-lg font-semibold transition-all duration-300 text-center"
+                    >
+                DOWNLOAD CV
+                    </a>
               </div>
             </div>
           </div>

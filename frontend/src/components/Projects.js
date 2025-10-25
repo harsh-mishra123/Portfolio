@@ -50,7 +50,7 @@ const Projects = () => {
       technologies: ['React', 'EtherJS', 'Hardhat', 'Solidity','JavaScript'],
       githubLink: 'https://github.com/harsh-mishra123/chaipeelo-dapp',
       demoLink: 'chaipeelooo.netlify.app/',
-      featured: true
+      featured: false
     },
   ];
 

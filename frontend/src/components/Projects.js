@@ -49,7 +49,7 @@ const Projects = () => {
       image: 'https://imgs.search.brave.com/jVIQZ_s56LSG2BtGDoY0p-55Zfzi1hXBF9EUSeL26xc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZmF2cG5nLmNvbS8x/MC80LzE2L3Byb2R1/Y3QtcmV2aWV3LXNw/ZWVjaC1idWJibGUt/d2l0aC1zdGFyLXJh/dGluZ3MtM2ZuajNh/aUhfdC5qcGc',
       technologies: ['React', 'EtherJS', 'Hardhat', 'Solidity','JavaScript'],
       githubLink: 'https://github.com/harsh-mishra123/chaipeelo-dapp',
-      demoLink: 'chaipeelooo.netlify.app/',
+      demoLink: 'https://chaipeelo-dapp.vercel.app/',
       featured: false
     },
   ];

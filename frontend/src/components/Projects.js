@@ -44,13 +44,13 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'Route Finder',
-      description: 'A Full Stack project where you can find minimal distant route, with less of obstacles.',
-      image: 'https://img.freepik.com/premium-vector/destinations-gps-tracking-map-track-navigation-pin-street-maps-navigate-mapping-locate-position_753943-584.jpg?semt=ais_hybrid&w=740&q=80',
-      technologies: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
-      Link: '',
-      demoLink: '',
-      featured: false
+      title: 'DApp for immutable reviews',
+      description: 'A decentralised application for immutable reviews.',
+      image: 'https://img.freepik.cohttps://www.peakpx.com/en/hd-wallpaper-desktop-fjyhqm/premium-vector/destinations-gps-tracking-map-track-navigation-pin-street-maps-navigate-mapping-locate-position_753943-584.jpg?semt=ais_hybrid&w=740&q=80',
+      technologies: ['React', 'EtherJS', 'Hardhat', 'Solidity','JavaScript'],
+      githubLink: 'https://github.com/harsh-mishra123/chaipeelo-dapp',
+      demoLink: 'chaipeelooo.netlify.app/',
+      featured: true
     },
   ];
 

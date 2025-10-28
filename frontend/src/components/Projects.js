@@ -30,7 +30,7 @@ const Projects = () => {
       technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'JWT','Solidity','Hardhat','Ethereum','SHA-256'],
       githubLink: 'https://github.com/harsh-mishra123/Chronovault',
       demoLink: 'chronovaulttt.netlify.app/',
-      featured: false
+      featured: true
     },
     {
       id: 4,

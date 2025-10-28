@@ -24,12 +24,12 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://via.placeholder.com/400x250/1a1a2e/e74c3c?text=Task+Manager',
-      technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'JWT'],
-      githubLink: 'https://github.com/harshmishra/task-manager',
-      demoLink: 'https://task-manager-demo.netlify.app',
+      title: 'Chronovault',
+      description: 'A decentralise react app to secure your files and info for future.',
+      image: 'https://imgs.search.brave.com/DKEuRhROFKk3bbCQHQ_dWt42xly-UWOApijnvR1SCZE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nYWxsLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvNC9DeWJl/ci1TZWN1cml0eS1Q/TkctSW1hZ2UtRmls/ZS5wbmc',
+      technologies: ['React', 'Socket.io', 'Node.js', 'MongoDB', 'JWT','Solidity','Hardhat','Ethereum','SHA-256'],
+      githubLink: 'https://github.com/harsh-mishra123/Chronovault',
+      demoLink: 'chronovaulttt.netlify.app/',
       featured: false
     },
     {

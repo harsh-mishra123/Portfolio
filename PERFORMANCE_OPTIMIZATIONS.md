@@ -120,6 +120,22 @@ mongoose.connect(uri, {
 - Consistent error responses
 - Better debugging
 
+### 9. Rate Limiting (Security + Performance)
+**Impact: High** - Protection against spam and DoS attacks
+
+**Changes:**
+```javascript
+// Contact form submissions: 5 requests per 15 minutes per IP
+// Get contacts: 100 requests per 15 minutes per IP
+```
+
+**Benefits:**
+- Prevents spam and abuse of contact form
+- Protects database from excessive writes
+- Mitigates DoS attacks
+- Reduces server load from malicious traffic
+- Returns proper rate limit headers for clients
+
 ## Performance Metrics
 
 ### Before Optimizations:
@@ -158,6 +174,7 @@ mongoose.connect(uri, {
    - Request size limits
    - Error message standardization
    - Disabled unnecessary headers
+   - Rate limiting on sensitive endpoints
 
 ## Testing Recommendations
 
@@ -165,6 +182,7 @@ mongoose.connect(uri, {
 2. **Animation Performance**: Monitor CPU usage during scrolling and animations
 3. **Database Performance**: Test query times with 1000+ contact records
 4. **Memory Profiling**: Check for memory leaks during extended usage
+5. **Rate Limiting**: Verify rate limits work correctly and return appropriate headers
 
 ## Future Optimization Opportunities
 
@@ -173,7 +191,7 @@ mongoose.connect(uri, {
 3. **CDN**: Serve static assets from CDN
 4. **Service Worker**: Add offline support and asset caching
 5. **Backend Caching**: Implement Redis for frequently accessed data
-6. **API Rate Limiting**: Add rate limiting middleware for API protection
+6. **Advanced Rate Limiting**: Implement sliding window or token bucket algorithms
 
 ## Maintenance Notes
 

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const Projects = () => {
-  const projects = [
+  const projects = useMemo(() => [
     {
       id: 1,
       title: 'Connect to Wallet',
@@ -52,9 +52,19 @@ const Projects = () => {
       demoLink: 'https://chaipeelo-dapp.vercel.app/',
       featured: true
     },
-  ];
+  ], []);
 
-  const ProjectCard = ({ project }) => (
+  const featuredProjects = useMemo(() => 
+    projects.filter(project => project.featured), 
+    [projects]
+  );
+
+  const otherProjects = useMemo(() => 
+    projects.filter(project => !project.featured), 
+    [projects]
+  );
+
+  const ProjectCard = React.memo(({ project }) => (
     <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl group">
       {/* Project Image */}
       <div className="relative overflow-hidden">
@@ -121,7 +131,7 @@ const Projects = () => {
         </div>
       </div>
     </div>
-  );
+  ));
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -143,7 +153,7 @@ const Projects = () => {
             </span>
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projects.filter(project => project.featured).map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <div
                 key={project.id}
                 data-aos="fade-up"
@@ -163,7 +173,7 @@ const Projects = () => {
             </span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.filter(project => !project.featured).map((project, index) => (
+            {otherProjects.map((project, index) => (
               <div
                 key={project.id}
                 data-aos="fade-up"

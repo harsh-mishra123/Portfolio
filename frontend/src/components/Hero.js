@@ -7,18 +7,22 @@ const Hero = () => {
 
   useEffect(() => {
     const heroElement = heroRef.current;
+    
+    // Only create observer if element exists
+    if (!heroElement) return;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
+          // Disconnect after first intersection to save resources
+          observer.disconnect();
         }
       },
       { threshold: 0.1 }
     );
 
-    if (heroElement) {
-      observer.observe(heroElement);
-    }
+    observer.observe(heroElement);
 
     // Initialize Typed.js
     const typed = new Typed(typedElementRef.current, {
@@ -31,9 +35,7 @@ const Hero = () => {
     });
 
     return () => {
-      if (heroElement) {
-        observer.unobserve(heroElement);
-      }
+      observer.disconnect();
       typed.destroy();
     };
   }, []);

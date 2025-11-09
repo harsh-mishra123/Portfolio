@@ -15,12 +15,23 @@ const createContact = async (req, res) => {
       });
     }
 
+    // Trim whitespace from inputs
+    const trimmedData = {
+      name: name.trim(),
+      email: email.trim(),
+      message: message.trim()
+    };
+
+    // Additional validation for empty strings after trim
+    if (!trimmedData.name || !trimmedData.email || !trimmedData.message) {
+      return res.status(400).json({
+        success: false,
+        message: 'Fields cannot be empty or contain only whitespace'
+      });
+    }
+
     // Create new contact
-    const contact = await Contact.create({
-      name,
-      email,
-      message
-    });
+    const contact = await Contact.create(trimmedData);
 
     res.status(201).json({
       success: true,
@@ -50,11 +61,24 @@ const createContact = async (req, res) => {
 // @access  Public (in a real app, this should be protected)
 const getContacts = async (req, res) => {
   try {
-    const contacts = await Contact.find().sort({ createdAt: -1 });
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const skip = (page - 1) * limit;
+
+    const contacts = await Contact.find()
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .skip(skip)
+      .lean(); // Use lean() for better performance when not modifying documents
     
+    const total = await Contact.countDocuments();
+
     res.status(200).json({
       success: true,
       count: contacts.length,
+      total,
+      page,
+      pages: Math.ceil(total / limit),
       data: contacts
     });
   } catch (error) {

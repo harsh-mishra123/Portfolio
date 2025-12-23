@@ -5,12 +5,26 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let timeoutId = null;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (timeoutId) {
+        return;
+      }
+      
+      timeoutId = setTimeout(() => {
+        setIsScrolled(window.scrollY > 50);
+        timeoutId = null;
+      }, 100);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   const navLinks = [

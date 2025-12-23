@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const Skills = () => {
-  const skills = [
+  const skills = useMemo(() => [
     {
       category: 'Frontend',
       items: [
@@ -34,9 +34,9 @@ const Skills = () => {
         { name: 'EtherJS', level: 50, color: 'from-blue-600 to-blue-800' }
       ]
     }
-  ];
+  ], []);
 
-  const SkillCard = ({ skill }) => (
+  const SkillCard = React.memo(({ skill }) => (
     <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
       <div className="flex justify-between items-center mb-3">
         <h4 className="text-white font-semibold text-lg">{skill.name}</h4>
@@ -49,7 +49,11 @@ const Skills = () => {
         ></div>
       </div>
     </div>
-  );
+  ));
+
+  const technologies = useMemo(() => [
+    'Git', 'Docker', 'AWS', 'Ethereum', 'Web3.js', 'REST APIs', 'GraphQL', 'Jest', 'Webpack', 'Tailwind CSS'
+  ], []);
 
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -94,7 +98,7 @@ const Skills = () => {
             </span>
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {['Git', 'Docker', 'AWS', 'Ethereum', 'Web3.js', 'REST APIs', 'GraphQL', 'Jest', 'Webpack', 'Tailwind CSS'].map((tech, index) => (
+            {technologies.map((tech, index) => (
               <span
                 key={tech}
                 className="px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-700 text-white rounded-full border border-gray-600 hover:border-blue-500 transition-all duration-300 transform hover:scale-105 cursor-default"

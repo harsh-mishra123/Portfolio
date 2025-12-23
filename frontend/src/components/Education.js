@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 const Education = () => {
-  const educationData = [
+  const educationData = useMemo(() => [
     {
       id: 1,
       degree: 'Bachelor of Technology (B.Tech)',
@@ -52,11 +52,11 @@ const Education = () => {
       ],
       icon: '🏫'
     }
-  ];
+  ], []);
 
 
 
-  const TimelineItem = ({ education, index, isLast }) => (
+  const TimelineItem = React.memo(({ education, index, isLast }) => (
     <div className="relative">
       {/* Connector Line */}
       {!isLast && (
@@ -108,7 +108,7 @@ const Education = () => {
         </div>
       </div>
     </div>
-  );
+  ));
 
   return (
     <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">

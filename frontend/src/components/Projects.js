@@ -52,6 +52,17 @@ const Projects = () => {
       demoLink: 'https://chaipeelo-dapp.vercel.app/',
       featured: true
     },
+    {
+      d: 5,
+      title: 'Sketch Generator',
+      description: 'A web application which will generate sketches acc to your prompt.',
+      image: 'https://imgs.search.brave.com/CrdtJWWiNyz1FMEe21bYGJE7SrDkazPz_y0MGszFrEQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWd2/My5mb3Rvci5jb20v/aW1hZ2VzL3ZpZGVv/SW1hZ2UvZm90b3It/YWktc2tldGNoLWdl/bmVyYXRvci1iYW5u/ZXItcGFnZS1pbWFn/ZS5qcGc',
+      technologies: ['React', 'EtherJS', 'Hardhat', 'Solidity','JavaScript'],
+      githubLink: 'https://github.com/harsh-mishra123/chaipeelo-dapp',
+      demoLink: 'https://chaipeelo-dapp.vercel.app/',
+      featured: true
+    },
+    },
   ];
 
   const ProjectCard = ({ project }) => (
